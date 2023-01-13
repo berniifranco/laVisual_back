@@ -19,5 +19,21 @@ module.exports = (sequelize, dataTypes) => {
 
     const Carrito = sequelize.define(alias, cols, config);
 
+    Carrito.associate = function (models) {
+        Carrito.belongsTo(models.Persona, {
+            as: 'persona',
+            foreignKey: 'id_persona'
+        });
+        Carrito.belongsTo(models.Producto, {
+            as: 'producto',
+            foreignKey: 'id_producto'
+        });
+        Carrito.belongsToMany(models.Producto, {
+            through: 'producto_carrito',
+            foreignKey: 'id_carrito',
+            otherKey: 'id_producto'
+        })
+    }
+    
     return Carrito;
 }

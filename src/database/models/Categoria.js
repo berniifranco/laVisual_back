@@ -1,3 +1,5 @@
+const Carrito = require("./Carrito");
+
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Categoria';
     let cols = {
@@ -18,6 +20,13 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Categoria = sequelize.define(alias, cols, config);
+
+    Categoria.associate = function (models) {
+        Categoria.hasMany(models.Producto, {
+            as: 'productos',
+            foreignKey: 'id_categoria'
+        })
+    }
 
     return Categoria;
 }

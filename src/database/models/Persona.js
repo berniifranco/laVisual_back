@@ -68,6 +68,14 @@ module.exports = (sequelize, dataTypes) => {
         Persona.belongsTo(models.Empresa, {
             as: 'empresa',
             foreignKey: 'id_empresa'
+        });
+        Persona.hasMany(models.Producto, {
+            as: 'productos',
+            foreignKey: 'id_persona'
+        });
+        Persona.hasMany(models.Carrito, {
+            as: 'carritos',
+            foreignKey: 'id_persona'
         })
     }
 

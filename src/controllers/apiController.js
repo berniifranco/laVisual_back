@@ -12,6 +12,14 @@ const apiController = {
     listProductos: async (req, res) => {
         let totalProductos = await apiServices.productos.list();
         res.json(totalProductos)
+    },
+    productosCategoria: async (req, res) => {
+        let productosCategory = await apiServices.productos.productsCategory();
+        res.json(productosCategory);
+    },
+    listRol: async (req, res) => {
+        let rol = await apiServices.rol.list();
+        res.json(rol);
     }
 };
 
