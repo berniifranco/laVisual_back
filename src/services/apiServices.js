@@ -8,4 +8,11 @@ let usuarios = {
     }
 };
 
-module.exports = {usuarios};
+let productos = {
+    list: async () => {
+        let todos = await db.Producto.findAll()
+        return todos;
+    }
+}
+
+module.exports = {usuarios, productos};
