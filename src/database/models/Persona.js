@@ -60,5 +60,16 @@ module.exports = (sequelize, dataTypes) => {
 
     const Persona = sequelize.define(alias, cols, config);
 
+    Persona.associate = function (models) {
+        Persona.belongsTo(models.Rol, {
+            as: 'rol',
+            foreignKey: 'id_rol'
+        });
+        Persona.belongsTo(models.Empresa, {
+            as: 'empresa',
+            foreignKey: 'id_empresa'
+        })
+    }
+
     return Persona;
 }
