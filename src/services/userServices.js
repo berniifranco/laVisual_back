@@ -24,7 +24,7 @@ const metodosUsuarios = {
                 'pais': req.body.pais,
                 "piso": req.body.piso,
                 'departamento': req.body.departamento,
-                'imagen': req.body.imagen,
+                'imagen': "default.jpg",
                 'id_empresa': 1,
                 'id_rol': 1
             })

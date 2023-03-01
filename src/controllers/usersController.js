@@ -1,7 +1,7 @@
 const userServices = require('../services/userServices');
 
 const userController = {
-    singIn: async (req, res) => {
+    signIn: async (req, res) => {
         let signIn = await userServices.signIn(req);
         if (signIn) {
             return res.status(201).json(signIn);
