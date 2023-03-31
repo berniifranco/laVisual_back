@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const apiController = require('../controllers/apiController');
+const apiController = require('../src/controllers/apiController');
 
 router.get('/users/todos', apiController.empresa);
 router.get('/users/list', apiController.listUsuarios);
