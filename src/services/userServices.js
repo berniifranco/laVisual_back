@@ -34,7 +34,7 @@ const metodosUsuarios = {
                         'id_rol': 1
                     })
                 } else {
-                    return errors;
+                    return errors.mapped();
                 }
             }
         }
