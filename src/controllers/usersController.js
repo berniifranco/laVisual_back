@@ -16,6 +16,7 @@ const userController = {
         if (login) {
             return res.status(201).json(login);
         } else {
+            console.log(login);
             return res.status(500).json({error: "Credenciales inválidas"})
         }
     }
